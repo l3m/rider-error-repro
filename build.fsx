@@ -16,6 +16,7 @@ Target.initEnvironment ()
 
 let serverPath = Path.getFullName "./src/Server"
 let clientPath = Path.getFullName "./src/Client"
+let examplePath = Path.getFullName "./src/Example"
 let clientDeployPath = Path.combine clientPath "deploy"
 let deployDir = Path.getFullName "./deploy"
 
@@ -78,7 +79,7 @@ Target.create "Build" (fun _ ->
         "let app = \".+\""
        ("let app = \"" + release.NugetVersion + "\"")
         System.Text.Encoding.UTF8
-        (Path.combine clientPath "Version.fs")
+        (Path.combine examplePath "Version.fs")
     runTool yarnTool "webpack-cli -p" __SOURCE_DIRECTORY__
 )
 

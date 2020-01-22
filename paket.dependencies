@@ -1,6 +1,6 @@
 group Server
     source https://api.nuget.org/v3/index.json
-    framework: netcoreapp3.0
+    framework: netcoreapp3.1
     storage: none
 
     nuget FSharp.Core
@@ -9,12 +9,13 @@ group Server
 
 group Client
     source https://api.nuget.org/v3/index.json
-    framework: netstandard2.0
+    framework: netstandard2.1
     storage: none
 
+    nuget Elmish
     nuget Fable.Core ~> 3
     nuget Fable.Elmish ~> 3
-    nuget Fable.Elmish.Debugger ~> 3
+    nuget Fable.Elmish.Debugger ~> 3 prerelease
     nuget Fable.Elmish.HMR ~> 4
     nuget Fable.Elmish.React ~> 3
     nuget Thoth.Fetch ~> 1
@@ -32,4 +33,3 @@ group Build
     nuget Fake.Core.Target
     nuget Fake.DotNet.Cli
     nuget Fake.IO.FileSystem
-
